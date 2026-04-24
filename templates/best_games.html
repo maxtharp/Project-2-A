@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row g-4 row-cols-1 row-cols-md-2">
+    {% for each_game in games %}
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="{{ url_for('static', filename='images/'+each_game.photo) }}" class="card-img-top" alt="{{ each_game.name }} cover art">
+                <div class="card-body text-center d-flex align-items-center justify-content-center">
+                    <h5 class="card-title">{{ each_game.name }}</h5>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
